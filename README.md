@@ -5,7 +5,7 @@ Project repo for M826 Space Data Demo Processing for Space Exploration
 
 
 ````
-conda install -n M826-LSA-SAF-processing -c conda-forge h5py matplotlib cartopy xarray, netCDF4, h5netcdf
+conda install -n M826-LSA-SAF-processing -c conda-forge h5py matplotlib cartopy xarray, netCDF4, h5netcdf, pyyaml
 ````
 
 When using conda there is no easy way to store the dependencies in a file upon installation. This is why the conda env needs to be:
