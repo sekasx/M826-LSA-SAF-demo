@@ -10,7 +10,7 @@ def read_product(file_name):
 
     # Open the .bz2 HDF5 file in the DIMAP format
 
-    xds = xr.open_dataset(file_name)
+    xds = xr.open_dataset(file_name, engine="h5netcdf")
 
     print(xds)
     return xds
@@ -98,7 +98,7 @@ def write_product(new_file_name, processed_product):
 def normalize_lst_value(value, band):
     return (value - band.OFFSET)/band.SCALING_FACTOR
 
-def execute():
+def execute(properties):
     file_name = "HDF5_LSASAF_MSG_DLST-MAX10D_MSG-Disk_201710110015"
     product = read_product(file_name)
 
