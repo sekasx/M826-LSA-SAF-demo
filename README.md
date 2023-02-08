@@ -124,12 +124,12 @@ python main.py --env local
 
 Timeseries plot, showing the Average and STD temperature in the area of Greece from 2019 to 2022 in 10-day steps
 
-![Timeseries Temperature Plot](https://github.com/sekasx/M826-LSA-SAF-demo/tree/main/outcome/timeseries-temperature-plot.png)
+![Timeseries Temperature Plot](https://raw.githubusercontent.com/sekasx/M826-LSA-SAF-demo/main/outcome/timeseries-temperature-plot.png)
 
 ### Objective 2
 
-![Composite Mean Temperature 2D Plot](https://github.com/sekasx/M826-LSA-SAF-demo/tree/main/outcome/composite-mean-temperature-2D-plot.png)
+![Composite Mean Temperature 2D Plot](https://raw.githubusercontent.com/sekasx/M826-LSA-SAF-demo/main/outcome/composite-mean-temperature-2D-plot.png)
 
-![Composite STD Temperature 2D Plot](https://github.com/sekasx/M826-LSA-SAF-demo/tree/main/outcome/composite-std-temperature-2D-plot.png)
+![Composite STD Temperature 2D Plot](https://raw.githubusercontent.com/sekasx/M826-LSA-SAF-demo/main/outcome/composite-std-temperature-2D-plot.png)
 
 
