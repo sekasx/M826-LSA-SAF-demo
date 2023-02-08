@@ -24,7 +24,7 @@ the [LSA SAF Data Service](https://datalsasaf.lsasvcs.ipma.pt)
 #### In this Demo, for a period of the past 3 years in the wider area of Greece, it will be calculated:
 
 - The mean temperature and the standard deviation of the temperature in Greece per 10-day period. The outcome will be a
-  plot indicating the progression of the temperature during this 3 year period
+  plot indicating the progression of the temperature during this 3-year period
 - The mean temperature and the standard deviation of the temperature per pixel. The outcome will be a new image where
   each pixel will contain the aggregate (mean and std) of all measurements for the same area (pixel) for this 3-year
   period
@@ -38,8 +38,8 @@ the [Derived LST (DLST; LSA-003)](https://navigator.eumetsat.int/product/EO:EUM:
 conda install -n M826-LSA-SAF-processing -c conda-forge h5py matplotlib cartopy xarray, netCDF4, h5netcdf, pyyaml
 ````
 
-Sometimes, the dependencies might need to be installed one-by-one. In that case, version mismatch may occur.
-In this case, by updating all dependencies fix the issue. This can be done with the following command:
+Sometimes, the dependencies might need to be installed one by one (in the case that a "version mismatch" may occur).
+In this case, updating all dependencies fix the issue. This can be done with the following command:
 
 ````
 conda update -n ENVIRONMENT --all
@@ -50,7 +50,7 @@ This is why the conda env needs to be:
 
 - exported
 - committed to the repo
-- import it to the new environment 
+- import it to the new environment
 
 ### Conda Export environment
 ````
@@ -79,36 +79,38 @@ wget -c --no-check-certificate -r -np -nH \
 While wget.exe can be downloaded, the execution is not always a 1-to-1 match with the Linux version.
 
 The execution of the `download_LSA_SAF_archive.py` is an easy way to download the desired files,
-that also gives greater flexibility that the wget command.
+that also gives greater flexibility than the wget command.
 
 ### Pre-steps
 
-To execute the scripts, the LSA-SAF DLST product need to be accessible by the scripts, and the configuration file has to
+To execute the scripts, the LSA-SAF DLST product needs to be accessible by the scripts, and the configuration file has
+to
 be updated.
 
 #### WebDav
 
 The recommended option is to set up [WebDav](https://gitlab.com/helpdesk.landsaf/lsasaf_data_access/-/wikis/data/webdav)
-to "map a network drive" pointing to this url: https://datalsasafwd.lsasvcs.ipma.pt/.
+to "map a network drive" pointing to this URL: https://datalsasafwd.lsasvcs.ipma.pt/.
 With this network drive you can copy&past, drag-and-drop as any other folder in your system. Files can be also accessed
 directly from scripts (e.g. python script) running in the machine, pointing to the network path.
 
-Ones the WebDav connection has been established, it is advised for better performance, to download the files in the
+Once the WebDav connection has been established, it is advised for better performance, to download the files in the
 local hard drive
 
 #### Configuration
 
-To execute the script, the properties file need to be configured. The file is located in the directory `./src/resource`.
+To execute the script, the properties file needs to be configured. The file is located in the directory `./src/resource`
+.
 
 The format of the file is `properties-{env}.yml`
 
 Where **{env}** is the environment variable that is given to the script upon execution.
-The properties need to be configured are:
+The properties that need to be configured are:
 
 - base-dir - the local base directory with the different LSA-SAF collections
 - input-data-dir - the directory with the collection that is going to be processed
 
-### Execution
+## Execution
 
 To execute the processing the command need to run
 
@@ -116,5 +118,18 @@ To execute the processing the command need to run
 python main.py --env local 
 ````
 
+## Outcome
+
+### Objective 1
+
+Timeseries plot, showing the Average and STD temperature in the area of Greece from 2019 to 2022 in 10-day steps
+
+![Timeseries Temperature Plot](https://github.com/sekasx/M826-LSA-SAF-demo/tree/main/outcome/timeseries-temperature-plot.png)
+
+### Objective 2
+
+![Composite Mean Temperature 2D Plot](https://github.com/sekasx/M826-LSA-SAF-demo/tree/main/outcome/composite-mean-temperature-2D-plot.png)
+
+![Composite STD Temperature 2D Plot](https://github.com/sekasx/M826-LSA-SAF-demo/tree/main/outcome/composite-std-temperature-2D-plot.png)
 
 
