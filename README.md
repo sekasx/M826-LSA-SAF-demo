@@ -1,21 +1,53 @@
 # M826-LSA-SAF-demo
-Project repo for M826 Space Data Demo Processing for Space Exploration
+
+Project repo for M826 Space Data Processing for Space Exploration
+
+## Description
+
+This is a demo project for LSA-SAF satellite data processing.
+
+The data used in LSA-SAF products are acquired by satellites operated by **EUMETSAT** and specifically by the:
+
+- Geostationary satellite series Meteosat
+- And the Polar-orbiting satellite series Metop
+
+The data are processed, managed and distributed by **IPMA** and become available through
+the [LSA SAF Data Service](https://datalsasaf.lsasvcs.ipma.pt)
+
+#### The 2 main objectives are:
+
+- Process one image and produce one single outcome. Then multiple images can be processed in a linear way to produce one
+  1-D time-series chat
+- Process multiple images together (stack one on top of the other) to create a composite 2-D image where each pixel will
+  contain the aggregate of the pixels in the same [x, y] location
+
+#### In this Demo, for a period of the past 3 years in the wider area of Greece, it will be calculated:
+
+- The mean temperature and the standard deviation of the temperature in Greece per 10-day period. The outcome will be a
+  plot indicating the progression of the temperature during this 3 year period
+- The mean temperature and the standard deviation of the temperature per pixel. The outcome will be a new image where
+  each pixel will contain the aggregate (mean and std) of all measurements for the same area (pixel) for this 3-year
+  period
+
+The dataset that will be used is
+the [Derived LST (DLST; LSA-003)](https://navigator.eumetsat.int/product/EO:EUM:DAT:MSG:LSA-003B?query=dlst&filter=responsible_org__LSA%20SAF&s=advanced)
 
 ## Install conda dependencies ##
-
 
 ````
 conda install -n M826-LSA-SAF-processing -c conda-forge h5py matplotlib cartopy xarray, netCDF4, h5netcdf, pyyaml
 ````
-Sometimes, the dependencies might need to be installed one-by-one. In that case, version mismatch may occur. 
+
+Sometimes, the dependencies might need to be installed one-by-one. In that case, version mismatch may occur.
 In this case, by updating all dependencies fix the issue. This can be done with the following command:
+
 ````
 conda update -n ENVIRONMENT --all
 ````
 
-
-When using conda there is no easy way to store the dependencies in a file upon installation (like pipenv). 
+When using conda there is no easy way to store the dependencies in a file upon installation (like pipenv).
 This is why the conda env needs to be:
+
 - exported
 - committed to the repo
 - import it to the new environment 
@@ -81,7 +113,7 @@ The properties need to be configured are:
 To execute the processing the command need to run
 
 ````
-python main.py --env local-windows 
+python main.py --env local 
 ````
 
 
