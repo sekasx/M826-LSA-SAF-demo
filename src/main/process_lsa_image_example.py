@@ -1,17 +1,16 @@
 # Required package to load data
-import h5py
-import numpy as np
-import os
 import datetime as dt
-import xarray as xr
+import os
+import warnings
 
-
-# Required packages for ploting
-import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
+import h5py
+# Required packages for ploting
+import matplotlib.pyplot as plt
+import numpy as np
+import xarray as xr
 from cartopy.feature.nightshade import Nightshade
-import warnings
 
 from src.main.helper.get_msg_col_lin import lat_lon2col_lin
 
@@ -82,7 +81,7 @@ def lsa_example():
     warnings.filterwarnings('ignore')
 
     # Define the coordinate reference system (CRS) for the data
-    data_crs = ccrs.Geostationary(central_longitude=central_longitude, satellite_height=42171 * 1000.)
+    data_crs = ccrs.Geostationary(central_longitude=central_longitude, satellite_height=36000 * 1000.)
 
     lat = 37.98
     lon = 23.72
@@ -96,15 +95,14 @@ def lsa_example():
     map_extend_geos = ax.get_extent(crs=data_crs)
     # Apply a correction to the extent to correctly display the image
     map_extend_geos = [1.025 * x for x in map_extend_geos]  # needs this correction because image gets shifted
-    # ax.coastlines()
+    ax.coastlines()
     ax.add_feature(cfeature.OCEAN, facecolor='lightgray')
     ax.gridlines(color='black', alpha=0.5, linestyle='--', linewidth=0.75, draw_labels=False)
     im1 = ax.imshow(zvar, interpolation='nearest', origin='upper', extent=map_extend_geos, )
     cb = plt.colorbar(im1, shrink=0.7)
     ax.add_feature(Nightshade(slot, alpha=0.2))
 
-    plt.gcf().set_dpi(1000)
-    # plt.gcf().set_dpi(1000)
+    plt.gcf().set_dpi(200)
     plt.show()
 
 

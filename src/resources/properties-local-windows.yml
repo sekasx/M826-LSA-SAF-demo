@@ -1,3 +1,4 @@
 environment: local
 
-base-dir: C:\Users\sekas\projects\M826-LSA-SAF-processing\M826-LSA-SAF-processing\src\resources\data
+base-dir: C:\Users\sekas\projects\M826-LSA-SAF-demo\data
+input-data-dir: DLST-HDF5-3years
