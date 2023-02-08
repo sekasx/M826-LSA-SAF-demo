@@ -1,3 +1,6 @@
 environment: local
 
-base-dir: /home/chris/projects/M826-LSA-SAF-demo/data
+webdav-dir: Z:\PRODUCTS\MSG\DLST\\\HDF5
+base-dir: C:\Users\sekas\projects\M826-LSA-SAF-demo\data
+data-dir: DLST-HDF5-3years
+

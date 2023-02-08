@@ -1,0 +1,4 @@
+environment: local-linux
+
+webdav-dir:
+base-dir: /home/chris/projects/M826-LSA-SAF-demo/data

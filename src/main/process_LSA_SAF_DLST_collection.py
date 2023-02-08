@@ -11,7 +11,7 @@ from src.main.helper.get_msg_lat_lon import col_lin2lat_lon
 
 def execute(properties):
     base_dir = properties['base-dir']
-    data_dir = properties['input-data-dir']
+    data_dir = properties['data-dir']
     input_dir = os.path.join(base_dir, data_dir)
 
     mean_temps = []
